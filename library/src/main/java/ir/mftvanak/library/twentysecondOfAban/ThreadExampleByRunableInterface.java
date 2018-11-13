@@ -9,6 +9,8 @@ public class ThreadExampleByRunableInterface implements Runnable {
         // will be executed in another thread
 
 
+
+
         System.out.print(Thread.currentThread().getName());
     }
 }
