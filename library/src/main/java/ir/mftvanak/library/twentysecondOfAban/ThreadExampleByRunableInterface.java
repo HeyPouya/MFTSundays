@@ -11,6 +11,8 @@ public class ThreadExampleByRunableInterface implements Runnable {
 
 
 
+
+
         System.out.print(Thread.currentThread().getName());
     }
 }
