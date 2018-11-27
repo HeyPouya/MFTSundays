@@ -1,5 +1,11 @@
 package ir.mftvanak.library.fifteenthOfAban;
 
+
+/**
+ *
+ *
+ *
+ */
 public class TestClass implements FirstInterface {
     @Override
     public void printName() {
@@ -9,7 +15,8 @@ public class TestClass implements FirstInterface {
     @Override
     public void PrintYourName(String name) {
 
-        System.out.print(name);
+
+        System.out.print(name); //asdlihja
 
 
     }
