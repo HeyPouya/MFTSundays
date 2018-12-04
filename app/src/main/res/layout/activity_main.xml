@@ -25,7 +25,7 @@
         android:background="#00FF00"
         android:text="Save"
         android:textColor="#FFFFFF"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <ImageView
         android:layout_width="match_parent"
