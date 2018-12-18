@@ -2,6 +2,7 @@ package ir.mftvanak.mftsundays;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -31,8 +32,10 @@ public class TestListActivity extends AppCompatActivity {
         list.add("Soha Jafari");
 
 
-        RecyclerView rv = findViewById(R.id.recycler);
-
+        RecyclerView recycler = findViewById(R.id.recycler);
+        StudentListAdapter adapter = new StudentListAdapter(list);
+        recycler.setAdapter(adapter);
+        recycler.setLayoutManager(new LinearLayoutManager(TestListActivity.this, LinearLayoutManager.VERTICAL, false));
 
 
     }
