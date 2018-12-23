@@ -1,7 +1,9 @@
 package ir.mftvanak.mftsundays;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +17,9 @@ import cz.msebera.android.httpclient.Header;
 import ir.mftvanak.mftsundays.pray.PrayerTimesModel;
 
 public class TestAsyncClientActivity extends AppCompatActivity {
+
+    Boolean hasUserClickedOnBack = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,5 +55,24 @@ public class TestAsyncClientActivity extends AppCompatActivity {
                 Toast.makeText(TestAsyncClientActivity.this, "Failed", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        if (hasUserClickedOnBack == false) {
+
+            Toast.makeText(TestAsyncClientActivity.this, "Please press back again", Toast.LENGTH_LONG).show();
+            hasUserClickedOnBack = true;
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    hasUserClickedOnBack = false;
+                }
+            }, 2000);
+            } else {
+            super.onBackPressed();
+        }
+
     }
 }
