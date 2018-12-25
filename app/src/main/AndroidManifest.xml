@@ -17,15 +17,8 @@
             android:name=".SubActivity"
             android:theme="@style/Theme.AppCompat.Dialog" />
         <activity android:name=".TestListActivity" />
-        <activity android:name=".WebActivity"></activity>
+        <activity android:name=".WebActivity" />
         <activity android:name=".TestAsyncClientActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
 
         <receiver android:name=".FlightModeReceiver">
@@ -34,7 +27,16 @@
             </intent-filter>
         </receiver>
 
+        <activity android:name=".TestNotificationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
     </application>
 
 </manifest>

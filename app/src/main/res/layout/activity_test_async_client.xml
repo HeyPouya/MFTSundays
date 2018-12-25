@@ -21,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <Button
-        android:background="@drawable/my_background"
+        android:background="@drawable/background_selector"
         android:id="@+id/button2"
         android:layout_width="100dp"
         android:layout_height="100dp"

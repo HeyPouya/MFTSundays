@@ -4,6 +4,9 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -70,9 +73,35 @@ public class TestAsyncClientActivity extends AppCompatActivity {
                     hasUserClickedOnBack = false;
                 }
             }, 2000);
-            } else {
+        } else {
             super.onBackPressed();
         }
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+
+        switch (item.getItemId()) {
+            case R.id.first:
+                Toast.makeText(TestAsyncClientActivity.this, "Clicked!", Toast.LENGTH_LONG).show();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
+//        menu.add(0, 1, 0, "title");
+
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+
 
     }
 }
