@@ -21,5 +21,9 @@ public class SecondActivity extends AppCompatActivity {
         textView.setText(s);
 
 
+        Intent intent1 = new Intent(this,TestService.class);
+        startService(intent1);
+
+
     }
 }

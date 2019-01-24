@@ -2,4 +2,7 @@
     <string name="app_name">MFTSundays</string>
     <string name="name">پویا</string>
     <string name="title_activity_web">WebActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

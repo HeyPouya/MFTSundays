@@ -17,6 +17,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.orm.SugarContext;
+import com.orm.SugarRecord;
+
 public class TestNotificationActivity extends AppCompatActivity {
 
     @Override
@@ -26,9 +29,23 @@ public class TestNotificationActivity extends AppCompatActivity {
 
         showNotification("MFT SUNDAYS!", "Its a notification!!!!!!!");
 
+        SugarContext.init(this);
+//        TestDatabase db = new TestDatabase(this, "mft", null, 1);
+//        db.insertToDB("POUYA", "HEYDARI", 20);
+//
+//
+//        String studentNames = db.getStudentsNames();
 
-        TextView tv = findViewById(R.id.tv);
-//        tv.setText(Html.fromHtml("<h2>Title</h2><br><p>Description here</p>"));
+//        Toast.makeText(this, studentNames, Toast.LENGTH_LONG).show();
+
+
+        StudentModel model = new StudentModel("Pouya","Heydari",10);
+        SugarRecord.save(model);
+
+
+        StudentModel getStudent = StudentModel.findById(StudentModel.class,1);
+        Toast.makeText(this, getStudent.name, Toast.LENGTH_LONG).show();
+
 
     }
 
@@ -36,7 +53,7 @@ public class TestNotificationActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        menu.add(0,1,0,"Hi");
+        menu.add(0, 1, 0, "Hi");
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
@@ -60,7 +77,7 @@ public class TestNotificationActivity extends AppCompatActivity {
             case R.id.third:
                 Toast.makeText(TestNotificationActivity.this, "third", Toast.LENGTH_LONG).show();
                 break;
-            case 1 :
+            case 1:
                 Toast.makeText(TestNotificationActivity.this, "hi", Toast.LENGTH_LONG).show();
                 break;
 
